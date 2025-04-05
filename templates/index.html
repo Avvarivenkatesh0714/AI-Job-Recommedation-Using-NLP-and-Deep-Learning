@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Job Matcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+       
+        nav{
+            width: 101%;
+            height: 81px;
+            background-color:#28a745;
+            margin-left: -8px;
+        }
+        .nav-left{
+            float: left;
+            margin-left: 200px;
+            color: white;
+            font-size: 26px;
+            margin-top: -34px;
+        }
+        .nav-right{
+            float: right;
+            color: white;
+            margin-right: 100px;
+        }
+        .navbar{
+            width: 110px;
+            height: 34px;
+            float: left;
+            text-decoration: none;
+            margin-top: 22px;
+        }
+        #icon{
+            font-size:50px;
+            color:#a4efa7;
+        }
+        #logodis{
+            font-size: 11px;
+            color: white;
+            margin-top: -30px;
+            font-weight:bold;
+        }
+        button {
+            padding: 10px 15px;
+            background: #28a745;
+            color: black;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease; /* Smooth transition */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Light shadow */
+        }
+        
+        button:hover {
+            background: black;
+            color: white;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+        }
+        
+        button:focus {
+            outline: 2px solid #000; /* Black outline when focused */
+        }
+        .navbar:hover{
+            color:black;
+            cursor:pointer;
+        }
+        .log{
+            padding: 10px 15px;
+            background:white;
+            color: black;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease; /* Smooth transition */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Light shadow */
+        }
+        .sec1{
+            width: 96%;
+            height: 500px;
+            
+            padding: 19px 30px;
+            border-radius: 5px;
+            margin: 20px 3px;
+        }
+        .sec1row1{
+            float:left;
+           
+            width:50%;
+            text-align:left;
+            font-weight:bold;
+            
+        }
+
+        .sec1row2{
+            float:right;
+            background:white;
+            height:500px;
+            border-radius: 5px;
+        }
+        img{
+            width:632px;
+        }
+        .sec1col1{
+            margin: 14px 21px;
+        }
+        .col1{
+            margin: 14px 21px;
+        }
+        #col11{
+            background:black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease; /* Smooth transition */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Light shadow */
+        }
+        #col11:hover{
+            background: white;
+            color: black;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+        }
+        .sec1col3{
+            background: white;
+            border-radius: 5px;
+            width: 630px;
+            height: 140px;
+            display: flex;
+            padding-left: 68px;
+        }
+        .sec1col3row1{
+            padding:20px 20px;
+            width:243px;
+            height: 140px;
+            display:flex;
+        }
+        .subcont{
+            width: 29%;
+            margin: -78px 247px;
+            background: white;
+            padding: 17px;
+            box-shadow: 0px 0px 10px #ccc;
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+        footer {
+            background-color: #f0f0f0; /* Light grey background */
+            padding: 20px 0;
+            font-family: sans-serif;
+            color: #333; /* Dark grey text */
+          }
+        
+          .footer-container {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+          }
+        
+          .footer-section {
+            width: 20%;
+            margin-bottom: 20px;
+          }
+        
+          .footer-section h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+          }
+        
+          .footer-section p, .footer-section a {
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: #666; /* Medium grey text */
+            text-decoration: none;
+          }
+        
+          .footer-section a:hover {
+            text-decoration: underline;
+          }
+        
+          .footer-section ul {
+            list-style: none;
+            padding: 0;
+          }
+        
+          .footer-section li {
+            margin-bottom: 5px;
+          }
+        
+          .footer-section img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+          }
+        
+          .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8em;
+            color: #999; /* Light grey text */
+          }
+        
+          /* Responsive adjustments */
+          @media (max-width: 768px) {
+            .footer-section {
+              width: 45%;
+            }
+          }
+        
+          @media (max-width: 480px) {
+            .footer-section {
+              width: 100%;
+            }
+          }
+          .sec2row1{
+            margin-left: 384px;
+    margin-right: 435px;
+          }
+          .contain{
+            width: 85%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px #ccc;
+            border-radius: 5px;
+            margin-top: 50px;
+          }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+           <h1>predica <i class="fa fa-angle-double-right" id="icon"></i></h1>
+           <p id="logodis">Pedict. Match. Succeed.</p>
+        </div>
+        <div class="nav-right">
+           
+           <span class="navbar">
+            <button class="log"><a href="/login" style="text-decoration:none;font-weight:bold;">Login <i class="fa fa-lock"></i></a></button>
+        </span>
+        
+        </div>
+    </nav>
+    <section class="sec1">
+        <div class="sec1row1">
+            
+         <h1 style=" font-size:43px;">One Stop Solution To Find Jobs As Per Your Skills in < 3 Seconds!</h1> 
+         <p style="font-size:28px;"> Get the best Job Matches based on Resume and Skills!!<p>
+            <p style="color: hsl(215.4deg 15.94% 47.95%);font-size: 20px;">Stop wasting time applying to jobs that don't fit. Upload your resume and let AI match you with the perfect job based on your skills.</p>
+         <h3> 
+            <div class="sec1col1">
+                <button class="col1" id="col11"><a href="/login" style="text-decoration:none;color:white;">Get Started Free </a> <i class="fa fa-long-arrow-right"></i></button>
+                <button class="col1" id="col22">See How It Works</buton>
+            </div>
+            <div class="sec1col3">
+                <div class="sec1col3row1">
+                    <i class="fa fa-upload" style="font-size:56px;"><br><p style="font-size:16px;align-items:justify;color: hsl(215.4deg 15.94% 47.95%);">Upload Resume(pdf, docx)</p></i> 
+             
+                </div>
+                <div class="sec1col3row1">
+                    <i class="fa fa-file" style="font-size:56px;"><br><p style="font-size:16px;align-items:justify;color: hsl(215.4deg 15.94% 47.95%);">Search For Jobs</p></i>
+                </div>
+                <div class="sec1col3row1">
+                    <i class="fa fa-briefcase" style="font-size:56px;"><br><p style="font-size:16px;align-items:justify;color: hsl(215.4deg 15.94% 47.95%);">Apply For Jobs</p></i>
+                </div>
+            </div>
+        </div>
+        <div class="sec1row2">
+            <img src="{{ url_for('static', filename='images/interv.jpg') }}" alt="My Image" >
+        </div>
+    </section>
+<br>
+<br>
+<section class="sec2row1">
+    <div class="contain">
+       <h1> Save time with our AI system that analyzes resumes, predicts salaries, and recommends the best job roles based on skills.</h1> <br>
+       <p style="color: hsl(215.4deg 15.94% 47.95%);">Save hours of manual job searching with our AI-powered system that analyzes resumes, predicts salaries, and recommends the best job roles based on skills, ensuring faster and more accurate job placement.</p>
+    </div>
+</section>
+    <div class="container">
+        <h1 style="text-align:center;"><i class="fa fa-upload"></i> Upload Your Resume</h1> <hr>
+        <div class="subcont">
+            <i class="fa fa-lock" style="font-size:34px;cursor:not-allowed;"></i> <br>
+            <p>Login to Upload Your Resume</p>
+        </div>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file"  accept=".pdf" style="cursor:not-allowed;" required>
+            <button type="submit" style="cursor:not-allowed;">Upload</button>
+        </form>
+        
+        <div id="result"></div>
+    </div>
+    <br><br><br>
+    <footer>
+        <div class="footer-container">
+          <div class="footer-section">
+            <h1>predica <i class="fa fa-angle-double-right" id="icon"></i></h1>
+            <p id="logodic">Pedict. Match. Succeed.</p>
+            <p>Professional Job Recommender For Your resume. Powered by AI technology.</p>
+            <i class="fa fa-instagram" style="font-size:25px;"></i>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="/login">Feedback</a></li>
+              <li><a href="/login">Version</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Legal</h3>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Refund Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: predicaindia@gmail.com</p>
+            <p>Address: Belur, Hassan, Karnataka, India</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 predica. All rights reserved.</p>
+        </div>
+      </footer>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (window.innerWidth > 768) {  // Check if the device is in desktop mode
+                alert("Desktop Mode Only!!");
+            }
+        });
+    </script>
+    
+      
+</body>
+</html>

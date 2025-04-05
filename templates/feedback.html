@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Job Matcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        nav {
+            width: 101%;
+            height: 80px;
+            background-color: #28a745;
+            margin-left: -8px;
+        }
+        .nav-left {
+            float: left;
+            margin-left: 150px;
+            color: white;
+            font-size: 26px;
+            margin-top: -34px;
+        }
+        .nav-right {
+            float: right;
+            color: white;
+            margin-right: 40px;
+        }
+        .navbar {
+            width: 110px;
+            height: 34px;
+            float: left;
+            text-decoration: none;
+            margin-top: 30px;
+        }
+        #icon {
+            font-size: 50px;
+            color: #a4efa7;
+        }
+        #logodis {
+            font-size: 11px;
+            color: white;
+            margin-top: -30px;
+        }
+        button {
+            padding: 10px 15px;
+            background: #218838;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #28a745;
+        }
+        .navbar:hover {
+            color: black;
+            cursor: pointer;
+        }
+        .but {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .download-btn {
+            display: none;
+            background-color: red;
+            margin-top: 10px;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8em;
+            color: #999; /* Light grey text */
+          }
+          input, textarea, button {
+            width: 95%;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+           <h1>predica <i class="fa fa-angle-double-right" id="icon"></i></h1>
+           <p id="logodis" style="font-weight:bold;">Predict. Match. Succeed.</p>
+        </div>
+        <div class="nav-right">
+            <span class="navbar"><a href="/dashboard" style="text-decoration:none;color:white;font-weight:bold;"><i class="fa fa-dashboard"></i> Dashboard</a></span>
+            <span class="navbar"><a href="/feedback" style="text-decoration:none;color:white;font-weight:bold;"><i class="fa fa-commenting"></i> Feedback</a></span>
+            <span class="navbar"><a href="/version" style="text-decoration:none;color:white;font-weight:bold;"><i class="fa fa-code"></i> Version</a></span>
+           <span class="navbar">
+              <a href="/" style="text-decoration:none;font-weight:bold;">Logout <i class="fa fa-arrow-circle-left"></i></a>
+           </span>
+        </div>
+    </nav>
+    <section style="font-size:100px;">
+        <div class="container">
+           <h1 style="font-size:33px;">Submit Your Experience</h1> <hr>
+           <input type="text" id="name" placeholder="Your Name" required>
+           <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" rows="4" placeholder="Your Feedback" required></textarea>
+        <button>Submit</button>
+        </div>
+    </section>
+    <hr>
+    <footer style="margin-botton:2px;">
+        <div class="footer-bottom">
+            <p>© 2025 predica. All rights reserved.</p>
+          </div>
+        </footer>
+</body>
+</html>

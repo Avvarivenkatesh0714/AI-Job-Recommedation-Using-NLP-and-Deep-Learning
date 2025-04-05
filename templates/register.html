@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>predica Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+
+    <style>
+        /* Custom colors */
+        :root {
+            --primary-color: #dc3545; /* Red */
+            --secondary-color: #000; /* Black */
+            --light-color: #fff; /* White */
+        }
+
+        body {
+            background-color:white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .fugaz-one-regular {
+            font-family: "Fugaz One", serif;
+            font-size: 40px;
+            font-weight: 600px;
+            font-style: normal;
+            color: #c02b36;
+            text-transform: uppercase;
+          }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: var(--secondary-color);
+        }
+        .navbar-brand, .navbar-nav .nav-link {
+            color: var(--light-color) !important;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+      .row{
+        margin: 38px;
+      }
+        .login-container {
+            background-color:  #28a745;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+            width: 400px;
+            margin: auto; /* Center horizontally */
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        /* Center content vertically and horizontally */
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+        }
+        .login-container > * { /* Target direct children of .login-container */
+            width: 100%; /* Make elements take full width for centering to work */
+        }
+
+        .login-container h4, .or-divider, label, a, strong {
+           color: white;
+            text-align: center; /* Center text within elements */
+        }
+        .form-control {
+            background-color: #333;
+            border-color: #555;
+            color: #eee;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            transition: background-color 0.3s ease; /* Smooth transition for hover */
+        }
+        .btn-primary:hover {
+            background-color: #c02b36; /* Darker red on hover */
+        }
+
+        .btn-google {
+            background-color: #4285f4;
+            color: #fff;
+            transition: background-color 0.3s ease; /* Smooth transition for hover */
+        }
+        .btn-google:hover {
+            background-color: #357ae8;
+        }
+        .or-divider {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .btn-link {
+            color: var(--primary-color) !important;
+            transition: color 0.3s ease; /* Smooth transition for hover */
+        }
+        .btn-link:hover {
+            color: #b32530 !important; /* Darker red on hover */
+            text-decoration: none; /* Remove underline on hover */
+        }
+
+        /* Footer (optional) */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            margin-top: auto;
+        }
+        .text-primary {
+            color: var(--iq-primary) !important;
+        }
+        .text-uppercase {
+            text-transform: uppercase !important;
+        }
+        nav{
+            width: 101%;
+            height: 65px;
+            background-color:#28a745;
+            margin-left: -8px;
+        }
+        .nav-left{
+            float: left;
+            margin-left: 60px;
+            color: white;
+            font-size: 40px;
+            margin-top: -34px;
+        }
+        .nav-right{
+            float: right;
+            color: white;
+            margin-right: 40px;
+        }
+        .navbar{
+            width: 110px;
+            height: 34px;
+            float: left;
+            text-decoration: none;
+            margin-top: 22px;
+        }
+        #icon{
+            font-size:73px;
+            color:#a4efa7;
+        }
+        #logodis{
+            font-size: 14px;
+            color: white;
+            margin-top: -12px;
+        }
+        button {
+            padding: 10px 15px;
+            background:  #218838;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        button:hover {
+            background:#28a745 ;
+        }
+        .navbar:hover{
+            color:black;
+            cursor:pointer;
+        }
+        hr{
+            color:white;
+           }
+           h1{
+            font-size:60px;
+           }
+    </style>
+</head>
+<body>
+
+
+  
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="login-container">
+               <strong class="cont" >  <h1 style="color:black;">predica <i class="fa fa-angle-double-right" id="icon"></i></h1>
+                    <p id="logodis">Pedict. Match. Succeed.</p>
+                </strong> 
+               
+            <hr>
+                <div class="or-divider">Or sign in with your email</div>
+
+                <form method="POST" action="{{ url_for('register') }}">
+
+                    <div class="form-group">
+                        
+                        <input type="text" class="form-control" placeholder="Full Name" name="full_name" required>
+                        
+                        
+                    </div>
+                    <div class="form-group">
+                        
+                        <input type="email" class="form-control" placeholder="Email" name="email" required>
+                        
+                        
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password" name="password" required>
+                    </div>
+                     <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    <a href="dashboard/pages-recoverpw.html" class="btn btn-link btn-block">Forgot Password?</a>
+                </form>
+
+                <div class="text-center mt-3" style="color: white;">
+                    Don't you have an account? <a href="/register" style="color: #c02b36;text-decoration:none;
+">Sign up</a>
+                    
+
+                </div>
+                <div>
+                    <center><a href="/"style="color: #c02b36; text-decoration:underline">Back to home</a></center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+
